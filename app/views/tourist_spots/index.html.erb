@@ -1,3 +1,30 @@
 <div class="container">
-test
+  <div class="row">
+    <div class="col-md-4">
+      <%= form_with model: @tourist_spot, method: :post, local: true do |f|  %>
+        <%= f.file_field :tourist_spot_image, multiple: true %>
+        <%= f.submit '送信' %>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <table class="table table-bordered">
+        <% @tourist_spots.each do |tourist_spot| %>
+          <thead>
+            <tr>
+              <th>
+                画像
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <%= image_tag tourist_spot.tourist_spot_image[0].to_s %>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>

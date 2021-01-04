@@ -6,7 +6,7 @@ class TouristSpotsController < ApplicationController
 
   def create
     @tourist_spot = TouristSpot.create(tourist_spot_params)
-    redirect_to tourist_spots_path
+    redirect_to root_path
   end
 
   private
