@@ -1,0 +1,2 @@
+class TouristSpotImage < ApplicationRecord
+end
