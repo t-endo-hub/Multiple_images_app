@@ -14,12 +14,19 @@
               <th>
                 画像
               </th>
+              <th>
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>
-                <%= image_tag tourist_spot.tourist_spot_image[0].to_s %>
+                <% tourist_spot.tourist_spot_image.each do |image| %>
+                  <%= image_tag image.to_s %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to '削除', tourist_spot_path(tourist_spot), method: :delete, class: 'btn btn-danger' %>
               </td>
             </tr>
           </tbody>

@@ -9,6 +9,12 @@ class TouristSpotsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @tourist_spot = TouristSpot.find(params[:id])
+    @tourist_spot.destroy
+    redirect_to root_path
+  end
+
   private
   def tourist_spot_params
     params.require(:tourist_spot).permit( { tourist_spot_image: [] })
